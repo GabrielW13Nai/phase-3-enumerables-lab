@@ -11,14 +11,28 @@ end
 
 # given an array of spicy foods, **return an array of strings**
 # with the names of each spicy food
+
 def get_names(spicy_foods)
-  # your code here
+  arr = []
+  i=0
+  spicy_foods.each { |name| p arr << ("name: #{name[:name]}")}
+   
 end
 
 # given an array of spicy foods, **return an array of hashes** 
 # where the heat level of the food is greater than 5
+
 def spiciest_foods(spicy_foods)
-  # your code here
+  arr = []
+  spicy_foods.select do |spiciest| 
+    if spiciest[:heat_level] > 5
+    food = ["Name: #{spiciest[:name]}", "cuisine: #{spiciest[:cuisine]}", "heat_level: #{spiciest[:heat_level]}"]
+    p arr.push(food)
+  else
+     p nil
+  end
+end
+
 end
 
 # given an array of spicy foods, **output to the terminal**
@@ -55,3 +69,7 @@ end
 def average_heat_level(spicy_foods)
   # your code here
 end
+
+get_names spicy_foods
+
+spiciest_foods spicy_foods
